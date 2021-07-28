@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>AMD: no, jQuery: no</title>
@@ -281,33 +281,34 @@
                     new XElement(W.t, "Hello Open XML World.  Created in browser, no AMD (require.js), no jQuery.")));
             doc.mainDocumentPart().getXDocument().descendants(W.p).firstOrDefault().replaceWith(p);
             var theContent = doc.saveToBase64();
+            console.log(theContent);
             return theContent;
         }
-
-        JsDownload.create('jsdownload', {
-            data: function () {
-                return createDocument();
-            },
-            filename: function () {
-                return "Test.docx";
-            },
-            dataType: "base64",
-            onComplete: function () {
-                /* alert('Saved'); */
-            },
-            onCancel: function () {
-                alert('Canceled');
-            },
-            onError: function () {
-                alert('Empty file, not saved');
-            },
-            swf: 'media/JsDownload.swf',
-            downloadImage: 'images/download.png',
-            width: 100,
-            height: 30,
-            transparent: true,
-            append: false
-        });
+	console.log(createDocument());
+//         JsDownload.create('jsdownload', {
+//             data: function () {
+//                 return createDocument();
+//             },
+//             filename: function () {
+//                 return "Test.docx";
+//             },
+//             dataType: "base64",
+//             onComplete: function () {
+//                 /* alert('Saved'); */
+//             },
+//             onCancel: function () {
+//                 alert('Canceled');
+//             },
+//             onError: function () {
+//                 alert('Empty file, not saved');
+//             },
+//             swf: 'media/JsDownload.swf',
+//             downloadImage: 'images/download.png',
+//             width: 100,
+//             height: 30,
+//             transparent: true,
+//             append: false
+//         });
     }());
 
 </script>
